@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 17
+    }
+}
+
+/*
+List myDependencies = ["com.google.android.gms:play-services:3.2.65",
+        fileTree (dir: "/Applications/Android Studio.app/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs", includes: ['*.jar'])]
+
+dependencies {
+    compile myDependencies
+}
+*/
+
+dependencies {
+    /*compile files('libs/google-play-services.jar') */
+    compile project(':google-play-services_lib')
+}
